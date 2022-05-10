@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <nav class="flex gap-5 text-lg bg-blue-700 p-4 m-5">
+      <!-- {% block login %} {% endblock %} -->
+      <div class="flex flex-grow gap-5">
+        <a href="/signin" class="hover:text-yellow-500">signin</a>
+        <a href="/login" class="hover:text-yellow_500">login</a>
+        <a href="/logout">logout</a>
+      </div>
+
+      <h1 class="text-lg text-center">Site de ouf</h1>
+
+      <h1 class="bg-blue-500 text-lg p-3 hover:text-yellow-100 m-2">
+        <span class="uppercase font-bold">
+          <h2 class="text-center">Mon site full-stack, bienvenue {{ user }}</h2>
+        </span>
+      </h1>
+    </nav>
+    <div class="container mx-auto bg-blue-600">
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
